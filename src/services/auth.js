@@ -29,3 +29,33 @@ export const signUp2Service = async (email, confirmationCode) => {
 
     return await response.json()
 }
+
+export const changePassword1Service = async email => {
+    const response = await fetch(`${API_URI}/auth/change-password-1`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            email
+        })
+    })
+
+    return await response.json()
+}
+
+export const changePassword2Service = async (email, password, confirmationCode) => {
+    const response = await fetch(`${API_URI}/auth/change-password-2`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            email,
+            password,
+            confirmationCode
+        })
+    })
+
+    return await response.json()
+}
