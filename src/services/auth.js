@@ -30,6 +30,21 @@ export const signUp2Service = async (email, confirmationCode) => {
     return await response.json()
 }
 
+export const signInService = async (email, password) => {
+    const response = await fetch(`${API_URI}/auth/signin`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({
+            email,
+            password
+        })
+    })
+
+    return await response.json()
+}
+
 export const changePassword1Service = async email => {
     const response = await fetch(`${API_URI}/auth/change-password-1`, {
         method: 'POST',

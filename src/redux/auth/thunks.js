@@ -1,4 +1,9 @@
 import {
+    setAccessTokenAction,
+    setRefreshTokenAction
+} from './actions'
+
+import {
     resetAction,
     setIsLoadingAction,
     setIsAwaitingConfirmationCodeAction,
@@ -11,6 +16,7 @@ import {
 import {
     signUp1Service,
     signUp2Service,
+    signInService,
     changePassword1Service,
     changePassword2Service
 } from '../../services/auth'
@@ -57,6 +63,30 @@ export const signUp2Thunk = () => async (dispatch, getState) => {
 
     if (result.success) {
         dispatch(setIsFinishAction(true))
+    }
+}
+
+export const signInThunk = () => async (dispatch, getState) => {
+    dispatch(setIsLoadingAction(true))
+    dispatch(setEmailFeedbackAction(''))
+    dispatch(setPasswordFeedbackAction(''))
+
+    const { email, password } = getState().forms
+    const result = await signInService(email, password)
+
+    if (result.error && result.error.emailFeedback) {
+        dispatch(setEmailFeedbackAction(result.error.emailFeedback))
+    }
+
+    if (result.error && result.error.passwordFeedback) {
+        dispatch(setPasswordFeedbackAction(result.error.passwordFeedback))
+    }
+
+    dispatch(setIsLoadingAction(false))
+
+    if (result.success) {
+        dispatch(setAccessTokenAction(result.success.accessToken))
+        dispatch(setRefreshTokenAction(result.success.refreshToken))
     }
 }
 
