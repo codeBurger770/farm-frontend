@@ -65,6 +65,7 @@
 
 ## Способ построения композиции нечетких автоматов
 *Этап 1*. Среди всех событий и риск-событий находятся начальные, это такие события и риск-события, которые не являются выходами логических операторов И или ИЛИ.
+
 *Этап 2*. Для каждого начального события задается ситуация:
 
 ![Рисунок 8](https://github.com/codeBurger770/farm-frontend/raw/master/readme/8.png)
@@ -72,3 +73,30 @@
 Затем создается нечеткий автомат:
 
 ![Рисунок 9](https://github.com/codeBurger770/farm-frontend/raw/master/readme/9.png)
+
+![Рисунок 10](https://github.com/codeBurger770/farm-frontend/raw/master/readme/10.png)
+
+*Этап 3*. Для каждого начального риск-события задается риск-ситуация:
+
+![Рисунок 11](https://github.com/codeBurger770/farm-frontend/raw/master/readme/11.png)
+
+Затем создается нечеткий автомат:
+
+![Рисунок 12](https://github.com/codeBurger770/farm-frontend/raw/master/readme/12.png)
+
+![Рисунок 13](https://github.com/codeBurger770/farm-frontend/raw/master/readme/13.png)
+
+*Этап 4*. Для каждого логического оператора И задаются ситуации или риск-ситуации его входов и выхода.
+Затем создается нечеткий автомат:
+
+![Рисунок 14](https://github.com/codeBurger770/farm-frontend/raw/master/readme/14.png)
+
+![Рисунок 15](https://github.com/codeBurger770/farm-frontend/raw/master/readme/15.png)
+
+*Этап 5*. Для каждого логического оператора ИЛИ задаются ситуации или риск-ситуации его входов и выхода.
+Затем создается нечеткий автомат:
+
+![Рисунок 16](https://github.com/codeBurger770/farm-frontend/raw/master/readme/16.png)
+
+![Рисунок 17](https://github.com/codeBurger770/farm-frontend/raw/master/readme/17.png)
+
