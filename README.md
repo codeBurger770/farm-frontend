@@ -50,12 +50,15 @@
 ## Нечеткий автомат
 Структурно нечеткий автомат представляет собой ориентированный граф, узлами которого являются его состояния, а дуги характеризуют переходы между состояниями.
 
-`FA=<Q,s,f,A,T>`
-`Q={Q1,Q2,Q3,Q4}`
-`s=(1,0,0,0)`
-`f=(0,0,0,1)`
-`A={A1,A2}`
-`T={Ta1,Ta2}`
+![Данные для нечеткого автомата](https://github.com/codeBurger770/farm-frontend/raw/master/readme/4.png)
 
-![?](https://github.com/codeBurger770/farm-frontend/raw/master/readme/4.png)
 ![Нечеткий автомат](https://github.com/codeBurger770/farm-frontend/raw/master/readme/5.png)
+
+## Композиция нечетких автоматов для идентификации, анализа и оценивания событий и риск-событий
+Структура событий и риск-событий:
+
+![Структура событий и риск-событий](https://github.com/codeBurger770/farm-frontend/raw/master/readme/6.png)
+
+Композиция нечетких автоматов:
+
+![Композиция нечетких автоматов](https://github.com/codeBurger770/farm-frontend/raw/master/readme/7.png)
