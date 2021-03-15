@@ -2,6 +2,8 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
+import ProjectsRoute from '../routes/ProjectsRoute'
+import SignOutPage from '../pages/authPages/SignOutPage'
 import SignInPage from '../pages/authPages/SignInPage'
 import SignUpPage from '../pages/authPages/SignUpPage'
 import ChangePasswordPage from '../pages/authPages/ChangePasswordPage'
@@ -13,10 +15,10 @@ export default function MainRoute() {
         return (
             <Switch>
                 <Route path="/projects">
-                    <div>Projects</div>
+                    <ProjectsRoute />
                 </Route>
                 <Route exact path="/signout">
-                    <div>SignOut</div>
+                    <SignOutPage />
                 </Route>
                 <Route>
                     <Redirect to="/projects" />
