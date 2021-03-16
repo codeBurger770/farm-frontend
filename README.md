@@ -1,5 +1,17 @@
 # Способ и программные средства выбора сценариев управления рисками на основе нечетких автоматов
 
+Разработанные программные средства используют клиент-серверную архитектуру. В данном репозитории находится код клиента.
+
+![Рисунок 1](https://github.com/codeBurger770/farm-frontend/raw/master/readme/1.png)
+
+## Клиент-серверная архитектура разработанных программных средств
+
+![Рисунок 2](https://github.com/codeBurger770/farm-frontend/raw/master/readme/2.png)
+
+## Логическая модель базы данных 
+
+![Рисунок 3](https://github.com/codeBurger770/farm-frontend/raw/master/readme/3.png)
+
 ## События и риск-события
 Событие – это то, что может произойти с определенной вероятностью.
 
@@ -18,7 +30,7 @@
 
 `Py=min(Px1,Px2)`, где `Py` – вероятность выходного события или риск-события; `Px1` – вероятность первого входного события или риск-события; `Px2` – вероятность второго входного события или риск-события.
 
-![Рисунок 1](https://github.com/codeBurger770/farm-frontend/raw/master/readme/1.png)
+![Рисунок 4](https://github.com/codeBurger770/farm-frontend/raw/master/readme/4.png)
 
 ## Логический оператор ИЛИ
 Логический оператор ИЛИ – данный оператор связывает входные события или риск-события с выходным событием или риск-событие. При наступлении хотя бы одного входного события или риск-события или всех событий или риск-событий происходит наступление выходного события или риск-события.
@@ -29,14 +41,14 @@
 
 `Py=max(Px1,Px2)`, где `Py` – вероятность выходного события или риск-события; `Px1` – вероятность первого входного события или риск-события; `Px2` – вероятность второго входного события или риск-события.
 
-![Рисунок 2](https://github.com/codeBurger770/farm-frontend/raw/master/readme/2.png)
+![Рисунок 5](https://github.com/codeBurger770/farm-frontend/raw/master/readme/5.png)
 
 ## Несколько логических операторов И или ИЛИ
 Если несколько логических операторов И или ИЛИ приводят к наступлению одного события или риск-события, то вероятность выходного события или риск-события вычисляется по следующей формуле:
 
 `Py=min(P1,P2,...,Pi,...,Pn), при i=1...n`, где `Py` – вероятность выходного события или риск-события; `i` – номер логического оператора И или ИЛИ; `Pi` – вероятность выходного события или риск-события логического оператора И или ИЛИ под номером i.
 
-![Рисунок 3](https://github.com/codeBurger770/farm-frontend/raw/master/readme/3.png)
+![Рисунок 6](https://github.com/codeBurger770/farm-frontend/raw/master/readme/6.png)
 
 ## Ситуация и риск-ситуация
 Ситуация – это множество событий и риск-событий, приводящих к результирующему событию.
@@ -50,33 +62,23 @@
 ## Нечеткий автомат
 Структурно нечеткий автомат представляет собой ориентированный граф, узлами которого являются его состояния, а дуги характеризуют переходы между состояниями.
 
-![Рисунок 4](https://github.com/codeBurger770/farm-frontend/raw/master/readme/4.png)
+![Рисунок 7](https://github.com/codeBurger770/farm-frontend/raw/master/readme/7.png)
 
-![Рисунок 5](https://github.com/codeBurger770/farm-frontend/raw/master/readme/5.png)
+![Рисунок 8](https://github.com/codeBurger770/farm-frontend/raw/master/readme/8.png)
 
 ## Композиция нечетких автоматов для идентификации, анализа и оценивания событий и риск-событий
 Структура событий и риск-событий:
 
-![Рисунок 6](https://github.com/codeBurger770/farm-frontend/raw/master/readme/6.png)
+![Рисунок 9](https://github.com/codeBurger770/farm-frontend/raw/master/readme/9.png)
 
 Композиция нечетких автоматов:
 
-![Рисунок 7](https://github.com/codeBurger770/farm-frontend/raw/master/readme/7.png)
+![Рисунок 10](https://github.com/codeBurger770/farm-frontend/raw/master/readme/10.png)
 
 ## Способ построения композиции нечетких автоматов
 *Этап 1*. Среди всех событий и риск-событий находятся начальные, это такие события и риск-события, которые не являются выходами логических операторов И или ИЛИ.
 
 *Этап 2*. Для каждого начального события задается ситуация:
-
-![Рисунок 8](https://github.com/codeBurger770/farm-frontend/raw/master/readme/8.png)
-
-Затем создается нечеткий автомат:
-
-![Рисунок 9](https://github.com/codeBurger770/farm-frontend/raw/master/readme/9.png)
-
-![Рисунок 10](https://github.com/codeBurger770/farm-frontend/raw/master/readme/10.png)
-
-*Этап 3*. Для каждого начального риск-события задается риск-ситуация:
 
 ![Рисунок 11](https://github.com/codeBurger770/farm-frontend/raw/master/readme/11.png)
 
@@ -86,19 +88,29 @@
 
 ![Рисунок 13](https://github.com/codeBurger770/farm-frontend/raw/master/readme/13.png)
 
-*Этап 4*. Для каждого логического оператора И задаются ситуации или риск-ситуации его входов и выхода.
-Затем создается нечеткий автомат:
+*Этап 3*. Для каждого начального риск-события задается риск-ситуация:
 
 ![Рисунок 14](https://github.com/codeBurger770/farm-frontend/raw/master/readme/14.png)
 
+Затем создается нечеткий автомат:
+
 ![Рисунок 15](https://github.com/codeBurger770/farm-frontend/raw/master/readme/15.png)
+
+![Рисунок 16](https://github.com/codeBurger770/farm-frontend/raw/master/readme/16.png)
+
+*Этап 4*. Для каждого логического оператора И задаются ситуации или риск-ситуации его входов и выхода.
+Затем создается нечеткий автомат:
+
+![Рисунок 17](https://github.com/codeBurger770/farm-frontend/raw/master/readme/17.png)
+
+![Рисунок 18](https://github.com/codeBurger770/farm-frontend/raw/master/readme/18.png)
 
 *Этап 5*. Для каждого логического оператора ИЛИ задаются ситуации или риск-ситуации его входов и выхода.
 Затем создается нечеткий автомат:
 
-![Рисунок 16](https://github.com/codeBurger770/farm-frontend/raw/master/readme/16.png)
+![Рисунок 19](https://github.com/codeBurger770/farm-frontend/raw/master/readme/19.png)
 
-![Рисунок 17](https://github.com/codeBurger770/farm-frontend/raw/master/readme/17.png)
+![Рисунок 20](https://github.com/codeBurger770/farm-frontend/raw/master/readme/20.png)
 
 ## Сценарий управления рисками и мероприятия
 Сценарий управления рисками – это совокупность мероприятий.
@@ -135,3 +147,12 @@
 *Этап 10*. Среди сценариев из массива всех сценариев управления рисками выбираем тот, у которого наименьший общий ущерб и наименьшая стоимость:
 
 `TCre→min` и `Csc→min`
+
+## Оценка целостности и работоспособности при динамических изменениях для модели композиция нечетких автоматов
+Исходная композиция нечетких автоматов:
+
+![Рисунок 21](https://github.com/codeBurger770/farm-frontend/raw/master/readme/21.png)
+
+Результат удаления логического оператора ИЛИ, на вход которого подается RE3 и RE4, а на выходе RE5:
+
+![Рисунок 22](https://github.com/codeBurger770/farm-frontend/raw/master/readme/22.png)
